@@ -1,0 +1,84 @@
+
+<h3><?php echo $this->translate('Carnet d\'adresse')?></h3>
+
+
+
+<!-- Information Client -->
+<section id="carnetAdresse">
+	<!-- Menu gestion des contact -->
+	<nav id="MenuListe">
+		<ul>
+			<li>
+				<a href="#?filtreClient" rel="popup_filtreClient" class="poplight">
+					<div class="bouton"><div id="filtrer"></div></div>
+				</a>
+			</li>
+			<li>
+				<a href="#?editClient" rel="popup_editClient" class="poplight">
+					<div class="bouton"><div id="ajouter"></div></div>
+				</a>
+			</li>
+			<li>
+				<a href="<?php echo $this->baseUrl('client/liste'); ?>">
+					<div class="bouton"><div id="listeResumer"></div></div>
+				</a>
+			</li>
+		</ul>
+	</nav>
+	<!-- Menu gestion des contact ends here -->
+
+	<!-- liste des contacts -->
+	<section id="listeClient">
+		<span class="erreur">
+			<?php
+				$array =  $this->messages;
+				foreach ($array as $key => $value) {
+					echo $value;
+				}
+			?>
+		</span>
+		<?php 
+		    if ($this->clients) {
+	            $i = 0;
+		        foreach ($this->clients as $client) {
+	                if ($i == 0){
+	                    ?>
+	                    	<a href="<?php echo $this->baseUrl('client/detail/id/' . $client->idClient); ?>">
+	                    		<div class="bgnoir"><?php echo ucwords(htmlentities($client->nom) . ' ' . htmlentities($client->prenom)); ?></div>
+	                    	</a>
+	                    <?php
+	                    $i=1;
+	                }
+	                else {
+	                    ?>
+	                    	<a href="<?php echo $this->baseUrl('client/detail/id/' . $client->idClient); ?>">
+	                    		<div class="bggris"><?php echo ucwords(htmlentities($client->nom) . ' ' . htmlentities($client->prenom)); ?></div>
+	                    	</a>
+	                    <?php
+	                    $i=0;
+	                }
+		        }
+		    }
+	        else {
+	        	echo "Aucun Client";
+	        }
+		?>
+	</section>
+	<!-- liste des contacts ends here -->
+</section>
+<!-- Information Client ends here -->
+
+<!-- Sidebar -->
+<aside id="tacheClient">
+	    <?php echo $this->action('index','tache'); ?>
+</aside> 
+<!-- Sidebar ends here-->
+
+<!-- popup editer note -->
+<?php echo $this->action('edit','client'); ?>
+
+<!-- popup filtrer client -->
+<?php echo $this->action('filtre','client'); ?>
+
+<!-- popup ajouter societe -->
+<?php  echo $this->action('ajouter','societe'); ?>

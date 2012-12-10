@@ -1,0 +1,15 @@
+<?php
+	$nbSociete = count($this->societe);
+
+	if ($nbSociete > 0){
+		foreach ($this->societe as $societe) {
+			?>
+				<div><?php echo ucfirst(htmlentities($societe->societe)); ?></div>
+				<div><?php echo ucfirst(htmlentities($societe->adresse)); ?></div>
+				<div><?php echo $societe->codePostal; ?></div>
+				<div><?php echo ucwords(htmlentities($societe->ville)); ?></div>
+			<?php
+			# code...
+		}
+	}
+?>

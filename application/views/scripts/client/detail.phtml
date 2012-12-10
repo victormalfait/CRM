@@ -1,0 +1,77 @@
+<h3><?php echo $this->translate('Fiche Client')?></h3>
+
+<!-- Information Client -->
+<section id="infoClient">
+	<!-- Menu fiche -->
+	<nav id="MenuFiche">
+		<ul>
+			<li>
+				<a href="#?editClient" rel="popup_editClient" class="poplight">
+					<div class="bouton">Modifier fiche</div>
+				</a>
+			</li>
+			<li>
+				<a href="#?ajoutNote" rel="popup_ajoutNote" class="poplight">
+					<div class="bouton">Ajouter note</div>
+				</a>
+			</li>
+			<li>
+				<a href="#?ajoutTache" rel="popup_ajoutTache" class="poplight">
+					<div class="bouton">Ajouter tâche</div>
+				</a>
+			</li>
+		</ul>
+	</nav>
+	<!-- Menu fiche ends here -->
+
+	<!-- Info Client -->
+	<fieldset>
+		<legend>Information Client</legend>
+			<div class="identite">
+				<div>Nom</div>
+				<div><?php echo $this->client->nom; ?></div>
+			</div>
+			<div class="identite">
+				<div>Prénom</div>
+				<div><?php echo $this->client->prenom; ?></div>
+			</div>
+			<div class="identite">
+				<div>Adresse E-mail</div>
+				<div><?php echo $this->client->email; ?></div>
+			</div>
+			<div class="identite">
+				<div>Société</div>
+				<div><?php echo $this->societe->societe; ?></div>
+			</div>
+			<div class="identite">
+				<div>N° de Téléphone</div>
+				<div><?php echo $this->client->telephone; ?></div>
+			</div>
+			<div class="identite">
+				<div>Adresse de société</div>
+				<div><?php echo $this->societe->adresse; ?><br />
+					<?php echo $this->societe->codePostal . ' ' . $this->societe->ville; ?></div>
+			</div>
+	</fieldset>
+	<!-- Menu fiche ends here -->
+</section>
+<!-- Information Client ends here -->
+
+<!-- Sidebar -->
+<aside id="tacheClient">                  
+    <?php echo $this->action('index','tache', null, array('idClient'=> $this->idClient)); ?>
+</aside> 
+<!-- Sidebar ends here-->
+
+<!-- Liste Note -->
+<section id="noteClient">
+	<?php echo $this->action('index','note', null, array('idClient'=> $this->idClient)); ?>
+</section>
+<!-- Liste Note ends here -->
+
+<!-- popup modifier client -->
+<?php echo $this->action('edit','client', null, array('idClient'=> $this->idClient)); ?>
+<!-- popup ajouter note -->
+<?php echo $this->action('ajouter','note', null, array('idClient'=> $this->idClient)); ?>
+<!-- popup ajouter note -->
+<?php echo $this->action('ajouter','tache', null, array('idClient'=> $this->idClient)); ?>

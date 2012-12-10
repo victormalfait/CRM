@@ -1,0 +1,49 @@
+<!-- Menu starts here -->
+<div id="menu">
+    
+    <!-- Logo starts here -->
+    <div id="logo">   
+        <h1><a href="#">Application CRM | Arnaud Lefevre</a></h1>
+    </div>
+    <!-- Logo ends here -->
+    
+    <!-- Navbar -->
+    <ul id="navbar">
+
+        <?php
+            if (Zend_Auth::getInstance ()->hasIdentity ()){
+            	?>
+                    <li class="menu-item">
+                        <a href="<?php echo $this->baseUrl('client/index'); ?>" >
+                            Home<span>Retour à la page d'accueil</span>
+                        </a>
+                    </li>
+	            	<li class="menu-item">
+						<a href="<?php echo $this->baseUrl('login/deconnexion'); ?>" >
+                            Déconnexion<span>Fermer votre séssion</span>
+                        </a>
+					</li>
+				<?php
+	        }
+	        else { 
+            	echo $this->action('connexion','login');
+            }
+        ?>
+    </ul>
+   <!-- Navbar ends here -->                          
+</div>
+<!-- Menu ends here -->
+
+<!-- Hide menu arrow -->
+<div id="hide_menu">   
+	<a href="#" class="menu_visible">Hide menu</a> 
+		
+	<div class="menu_tooltip">
+			
+        <div class="tooltip_hide"><p>Hide the navigation</p></div>
+		<div class="tooltip_show"><p>Show the navigation</p></div>
+						
+    </div>  
+							
+</div>
+<!-- Hide menu arrow ends here -->   

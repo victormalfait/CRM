@@ -1,0 +1,104 @@
+<h3><?php echo $this->translate('Liste des clients')?></h3>
+
+<div id="resumeClient">
+	<!-- fiche resumé -->
+	<?php 
+		// si le nombre de page recupere et superieur a 2
+		if (count($this->clients)) {
+			foreach ($this->clients as $client) {
+				// On charge le model
+				$tableClient = new TClient;
+
+	            // Requete par clé primaire
+	            $client = $tableClient  ->find($client->idClient)
+	                                    ->current();
+
+	                // Recherche des infos sur la societe du client
+	                $societe = $client->findParentRow('TSociete');
+	                // on recherche les infos sur les tache et les note du client
+	                $tache = $client->findDependentRowset('TTache');
+	                $note = $client->findDependentRowset('TNote');
+				?>
+					<a href="<?php echo $this->baseUrl('client/detail/id/' . $client->idClient); ?>">
+						<div class="resumeClient">
+							<div class="resume">
+								<!-- nom Client -->
+								<div class="resumeNom">
+									<?php echo ucwords(htmlentities($client->nom) . ' ' . htmlentities($client->prenom)); ?>
+								</div>
+								<!-- info client -->
+								<div class="resumeInfo">
+									<div class="info">
+										<div>Société :</div>
+										<div><?php echo ucfirst(htmlentities($societe->societe)); ?></div>
+									</div>
+									<div class="info">
+										<div>Adresse :</div>
+										<div>
+											<?php echo ucwords(htmlentities($societe->adresse)); ?> - 
+											<?php echo $societe->codePostal. ' ' . ucwords(htmlentities($societe->ville)); ?>
+										</div>
+									</div>
+									<div>
+										<div class="info">
+											<div>E-mail :</div>
+											<div><?php echo $client->email; ?></div>
+										</div>
+										<div class="info">
+											<div>Téléphone :</div>
+											<div><?php echo $client->telephone; ?></div>
+										</div>
+									</div>
+								</div>
+
+								<!-- info tache et note -->
+								<div class="resumeTache">
+									<div>
+										<?php 
+											if (count($tache) < 1) {
+											 	?>
+											 		<span>Aucune tâche</span>
+											 	<?php
+											}
+											else {
+												$tableTache = new TTache;
+
+												$requeteTache = $tableTache	->select()
+																			->from($tableTache, 'etat')
+																			->where('etat = 1');
+
+												$tacheFaite = $tableTache->fetchAll($requeteTache);
+												?>
+													<span>Tâche(s) éffectuée(s) :</span> <?php echo count($tacheFaite) . ' sur ' . count($tache); ?>
+												<?php
+											} 
+										?>
+									</div>
+									<div>
+										<?php 
+											if (count($note) < 1) {
+												?>
+													<span>Aucune note</span>
+												<?php
+											}
+											else {
+												?>
+													<span><?php echo count($note); ?> note(s) on été ajoutée(s)</span>
+												<?php
+											} 
+										?>
+									</div>
+								</div>
+							</div>
+						</div>
+					</a>
+				<?php
+			}
+		}
+		else {
+			echo "Aucun client n'a été trouvé";
+		}
+	?>
+</div>
+<!-- pagination -->
+<?php echo $this->paginationControl($this->clients, 'Sliding', 'searchPagination.phtml'); ?>

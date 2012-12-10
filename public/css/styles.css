@@ -1,0 +1,399 @@
+/*************************
+*         style          *
+*************************/
+
+/* ========= GENERAL STYLES ========== */
+    .testg{border: 1px solid green;}
+    .testb{border: 1px solid blue;}
+    .testr{border: 1px solid red;}
+    .erreur{ color: #B60000; font-weight: .7em; font-weight: bold;}
+    a{ text-decoration: none;}
+
+    html {
+        background: url(/img/background/desert.jpg) no-repeat center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    body{
+        font: 12px/20px "Helvetica Neue",Verdana,Helvetica,sans-serif;
+        color: white;
+    }
+
+    .body-page{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(/img/grid.png);
+        overflow-Y: scroll;
+    }
+
+	#page{
+        position: relative;
+        width: 1000px;
+		margin: 0 auto;
+		height: 100%;
+	}
+/* ========= GENERAL STYLES END HERE========== */
+
+
+/* ========= MENU STYLES ========== */
+    #menu_wrap {
+        width: 240px;
+        display: inline-block;
+        position: fixed;
+        top: 0px;
+    }
+    
+    #menu {
+        background:  url(/img/opacity/menu_back.png) repeat left top !important;
+        width: 220px;
+        padding: 0 10px 25px 10px;
+    }
+
+
+    #logo { width: 220px; height: 180px; }
+    #logo h1 {font-family: 'PT Sans Narrow', 'Helvetica Neue', Arial, sans-serif;}
+    #logo h1 a {
+        display: block;
+        width: 220px;
+        height: 180px;  
+        background: url(/img/logo_back.png) no-repeat top left;
+        text-indent: -9999px;
+    }
+    #logo h1 a { background: url("/img/logo_back.png") no-repeat scroll center top transparent;}
+
+    #navbar { width: 180px; margin: 34px auto -5px; }
+    #navbar ul { display: none;}
+    #navbar li {
+        width: 160px;
+        height: 29px;
+        padding: 6px 10px 14px;
+        border-bottom: 1px solid #343434;
+    }
+
+    #navbar li:first-child {border-top: 1px solid #343434;}
+
+    #navbar li a {
+        display: block;
+        font-family: 'PT Sans Narrow', 'Helvetica Neue', Arial, sans-serif;
+        font-size: 18px;
+        color: #a3a3a3;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    #navbar li span {
+        font: bold italic 12px 'PT Sans', 'Helvetica Neue', 'Verdana', sans-serif;
+        color: #555555;
+        position: absolute;
+        top: 26px;
+        left: 10px;
+        text-transform: none;
+    }
+
+    #navbar li.menu-item:hover { background: url(/img/menu_hover_arrow.png) no-repeat center right;}
+
+
+    #hide_menu { 
+        background:  url(/img/opacity/hide_menu_back.png) no-repeat left top !important;
+        width: 220px;
+        height: 115px;
+        padding: 0 10px;
+        position: relative;
+    }
+
+    .menu_visible { background: url(/img/menu_hide_arrow_top.png) no-repeat top left;}
+    .menu_hidden { background: url(/img/menu_hide_arrow_bottom.png) no-repeat top left;}
+
+    #hide_menu a {
+        display: block;
+        width: 48px;
+        height: 48px;
+        text-indent: -9999px;
+        position: absolute;
+        top: 5px;
+        left: 97px;
+    }
+
+    .menu_tooltip {
+        background: url(/img/opacity/tooltip.png) no-repeat center center !important;
+        width: 140px;
+        height: 30px;
+        padding: 17px 15px 0 25px;
+        position: absolute;
+        top: 4px;
+        left: 131px;
+        font: 12px "Helvetica Neue", Verdana, Helvetica, sans-serif;
+        line-height: 18px;
+        display: none;
+    }
+    .menu_tooltip div { position: absolute; top: 14px; left: 31px;}
+    .menu_tooltip .tooltip_show { display: none;}
+    .menu_tooltip p { text-align: center;}
+/* ========= MENU STYLES END HERE========== */
+
+
+/* ========= MAIN STYLES ========== */
+    #main_wrap {
+        background:  url(/img/opacity/content_back.png) repeat-y left top !important;
+        min-height: 100%; 
+        margin: 0 0 0 240px;
+    }
+
+    #main {
+        position: relative;
+        margin: 0 30px;
+    }
+/* ========= MAIN STYLES END HERE========== */
+
+
+/* ========= HEADER STYLES ========== */
+    #header { overflow: auto; position: relative;}
+    #header h2.section_title {
+        font: bold 30px 'PT Sans Narrow', 'Helvetica Neue', 'Verdana', sans-serif;
+        font-weight: normal; 
+        text-transform: uppercase;
+        /*margin: 0 0 40px 0;*/
+        margin: 19px 0px 40px;
+        color: white;
+    }
+    .header_titre { float: left; width: 390px;}
+    .header_deconnexion { float: right; width: 290px; text-align: right;}
+    .header_deconnexion a { display: inline-block; margin: 3px; }
+    .header_deconnexion #deconnexion{background: url(/img/deconnexion.png) no-repeat; height: 48px; width: 48px; margin: 0 5px; }*/
+/* ========= HEADER STYLES END HERE========== */
+
+
+/* ========= CONTENT STYLES ========== */
+    #content { position: relative;}
+
+    #content h3 {
+        font: bold 20px 'PT Sans', 'Helvetica Neue', 'Verdana', sans-serif;
+        padding: 10px 0 15px;
+        clear: left;
+    }
+/* ========= CONTENT STYLES END HERE========== */
+    
+
+/* ========= FOOTER STYLES =========  */
+    #footer { position: relative; bottom: 0; overflow: auto; clear: both }
+
+    #footer_info {width: 680px; margin: 20px auto 0; }
+        #footer_copyright { border-top: 1px solid #646464; padding: 9px 0 0 0; }
+        #footer_copyright p { margin: 7px 0 14px 0; color: #bebebe; font-size: 11px; }
+/* ========= FOOTER STYLES ENDS HERE =========  */
+
+
+/* ========= FORMULAIRE STYLES ============= */
+
+    li { position: relative;}
+
+    #FConnexion li label {
+        position: absolute;
+        top: 11px;
+        left: 17px;
+        color: rgb(123, 123, 123);
+        display: block;
+    }
+
+    li label {
+        position: absolute;
+        top: 5px;
+        left: 8px;
+        color: rgb(123, 123, 123);
+        display: block;
+    }
+
+    input,  textarea {
+        text-decoration: none;
+        background: none repeat scroll 0% 0% rgb(27, 27, 27);
+        border: 1px solid rgb(51, 51, 51);
+        border-radius: 3px 3px 3px 3px;
+        color: white;
+        padding: 5px;
+        font: 12px 'Helvetica Neue',Verdana,Helvetica,sans-serif;
+    }
+
+    #FConnexion input[type='submit'] {
+        margin-left: 40px;
+    }
+
+    .div-form li{ margin: 5px 0 0 0;}
+    ul{ width: 162px;}
+
+    input[type='submit'], input[type='reset'] {
+        height: 30px;
+        padding: 0px 0px 2px;
+        width: 100px;
+        background: -moz-linear-gradient(center top , rgb(66, 66, 66), rgb(40, 40, 40)) repeat scroll 0% 0% transparent;
+        text-shadow: 0px -1px 1px #000;
+        cursor: pointer;
+    }
+
+    input:focus,  textarea:focus {
+        background: none repeat scroll 0% 0% rgb(35, 35, 35);
+        border: 1px solid rgb(97, 97, 97);
+    }
+
+    input {
+        height: 20px;
+        width: 150px;
+    }
+
+    .bouton{
+        font: 14px 'Helvetica Neue',Verdana,Helvetica,sans-serif;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        padding: 10px 5px;
+        background: -moz-linear-gradient(center top , rgb(66, 66, 66), rgb(40, 40, 40)) repeat scroll 0% 0% transparent;
+        border-radius: 3px 3px 3px 3px;
+        border: 1px solid rgb(51, 51, 51);
+        text-shadow: 0px -1px 1px #000;
+        cursor: pointer;
+    }
+
+    .bouton:focus{
+        background: none repeat scroll 0% 0% rgb(35, 35, 35);
+        border: 1px solid rgb(97, 97, 97);
+    }
+/* ========= FORMULAIRE STYLES END HERE========== */
+
+
+/*========== CARNET D'ADRESSE STYLE ============*/
+    #carnetAdresse { width: 250px; float: right; }
+        #MenuListe { margin: 0 0 10px 0;}
+        #MenuListe ul { width: 100%; height: 35px;}
+        #MenuListe li { display: inline-block;}
+        #MenuListe li {width: 32%; height: 20px;}
+
+        #MenuListe #filtrer {background: url(/img/min-filtre.png) no-repeat center; height: 20px;}
+        #MenuListe #ajouter {background: url(/img/min-ajoute.png) no-repeat center; height: 20px;}
+        #MenuListe #listeResumer {background: url(/img/min-liste.png) no-repeat center; height: 20px;}
+
+        #listeClient a { text-decoration: none; color: #fff;}
+        #listeClient a:hover div { opacity: .7; font-size: 1.6em; padding: 15px 0;}
+        #listeClient div{ border-top: 1px solid #5E5E5E; padding: 10px 0; font-weight: bold; text-align: center; font-size: 1.3em;}
+
+    #infoBulle, #infoBulle1 {
+        /*display: none;*/
+        position: absolute;
+        top: 125px;
+        left:180px;
+        z-index: 12;
+        width: 110px;
+        /*padding: 6px 0;*/
+        background: #000;
+        border: 1px solid #535353;
+        border-radius: 3px;
+    }
+        #infoBulle:after, #infoBulle:before, #infoBulle1:after, #infoBulle1:before {
+            right: 100%;
+            top: 15px;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+        }
+
+        #infoBulle:after, #infoBulle1:after {
+            border-color: rgba(22, 22, 22, 0);
+            border-right-color: #000;
+            border-width: 10px;
+            margin-top: -10px;
+        }
+        #infoBulle:before, #infoBulle1:before {
+            border-color: rgba(83, 83, 83, 0);
+            border-right-color: #535353;
+            border-width: 11px;
+            margin-top: -11px;
+        }
+
+        #infoBulle a, #infoBulle1 a { color: #fff;}
+
+/*========== CARNET D'ADRESSE STYLE ENDS HERE ===============*/
+
+
+/*========== FICHE CLIENT STYLE ============*/
+    #infoClient { width: 400px; float: right;}
+        #MenuFiche { margin: 0 0 10px 0;}
+        #MenuFiche ul { width: 100%; height: 35px;}
+        #MenuFiche li { display: inline-block;}
+        #MenuFiche li {width: 130px; height: 20px;}
+        fieldset{
+            margin: 20px 0;
+            border: 1px solid #646464;
+            border-radius: 5px;
+            color: #000;
+            background: #9A9A9A url(/img/background/noise.png);
+            box-shadow:inset -1px -1px 1px #fff,inset 1px 1px 1px #000; 
+        }
+        legend {
+            margin:0 0 0 -1px;
+            padding: 3px 10px;
+            background: #9A9A9A url(/img/background/noise.png);
+            box-shadow:inset 1px 1px 1px #000;
+            border-left: 1px solid #646464; 
+            border-top: 1px solid #646464; 
+            border-radius: 3px 3px 3px 0px;
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 0px 0px 2px #000;
+        }
+        fieldset .identite { border-top: 1px solid #fff; border-bottom: 1px solid #525252; height: 35px;}
+        fieldset .identite:first-child { border-top: none;}
+        fieldset .identite:last-child { border-bottom: none;}
+        fieldset .identite div { width: 194px; font-weight: bold;}
+        fieldset .identite div:first-child {float: left; color: #47559D; padding: 7px 5px 0 0; text-align: right;}
+        fieldset .identite div:last-child {float: right; color: #000; padding: 7px 0 0 5px; text-align: left;}
+
+    #tacheClient { width: 250px; float: left;}
+        #tache { font-size: 1.2em; width: 250px; overflow: auto;}
+        #tache .tache{border-top: 1px solid #5E5E5E; position: relative; width: 250px; cursor: pointer;}
+        .tache:hover {background-color: #121212;}
+        .tache .fils { margin: 6px 15px; width: 220px;}
+        .tache  a{ color: #fff;}
+        .tache span {font-size: .7em; font-weight: bold; font-style: italic;}
+        .tache .dateFin { color: #343434;  float: right;}
+        .tache .pasFait { color: #C73F00; opacity: .5;}
+        .tache:hover .pasFait { opacity: .9;}
+        .tache .fait { color: #007C08; opacity: .5; }
+        .tache:hover .fait { opacity: .9; }
+        .supprimerTache { display: none; text-indent: -9999px; opacity: .5; text-indent: -9999px;  background: url(/img/crossDelete.png) no-repeat center; cursor: pointer; width: 10px; height: 10px; position: absolute; top: 5px; right: 5px;}
+        .tache:hover .supprimerTache { display: block;}
+        .supprimerTache:hover {opacity: 1;}
+
+    .noteClient { position: relative; clear: both; height: 105px; width: 680px; font-weight: bold; overflow: hidden; border-bottom: 1px solid #5E5E5E; }
+        #note div{ height: 40px; font-size: 1.2em; padding: 6px 15px;border-top: 1px solid #5E5E5E;}
+        #note span { color: #343434; font-size: .7em; font-style: italic; float: right;}
+            .ancienneNote { width: 680px; cursor: pointer; text-align: center; padding: 6px 0; text-indent: -9999px;}
+            .ancienneNoteShow { background: url(/img/ancienneNoteShow.png) no-repeat center;}
+            .ancienneNoteHide { background: url(/img/ancienneNoteHide.png) no-repeat center;}
+            .ancienneNote:hover { box-shadow: 0px 0px 2px 1px #000, inset 0px 0px 2px 1px #fff;}
+            .ancienneNote:active { box-shadow:inset 0px 0px 2px 1px #000, 0px 0px 2px 1px #fff; }
+/*========== FICHE CLIENT STYLE ENDS HERE ===============*/
+
+
+/*========== LISTE RÉSUMÉ STYLE ===========*/
+    .resumeClient{ width: 100%; border-top: 1px solid #5E5E5E; color: #fff;}
+    .resumeClient:hover {background-color: #121212;}
+        .resume { margin: 6px 15px;}
+            .resumeNom { padding: 5px 0; font-size: 1.3em;}
+            /*.resumeInfo {}*/
+                .resumeInfo .info { display: inline-block; font-size: .8em; font-weight: bold;}
+                .resumeInfo .info div { display: inline-block; vertical-align: top;}
+                .resumeInfo .info div:first-child {width: 70px; text-align: right;}
+                .resumeInfo .info div:last-child { min-width: 150px; font-weight: normal; text-align: left;}
+            .resumeTache {width: 70%; margin: 0 auto;}
+                .resumeTache div {display: inline-block; width: 49%;  font-size: .9em;}
+                .resumeTache div:first-child { text-align: left;}
+                .resumeTache div:last-child { text-align: right;}
+                .resumeTache span { font-weight: bold;}
+/*========== LISTE RÉSUMÉ STYLE ENDS HERE ===========*/

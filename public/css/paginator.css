@@ -1,0 +1,28 @@
+/*subcide.com*/
+/* Pager
+------------------------------------------------- */
+
+.pagerSC {
+	clear: both;
+	height: 1%;
+	background: #3E3E3E;
+	margin: 0 auto;
+	border: 5px solid #313131;
+	font-size: 0.8em;
+	font-family: Tahoma, Arial, Helvetica, Sans-serif;
+}
+
+.pagerSC a, .pagerSC span {
+    display: block;
+    float: left;
+    padding: 0.3em 0.5em;
+    margin-right: 0.1em;
+	text-decoration: none;
+	background: #3E3E3E;
+	color: #ffffff;
+}
+.pagerSC span { color: #868686;}
+
+.pagerSC .currentSC { background: #313131;}
+
+.pagerSC a:hover { background: #EC5210;}

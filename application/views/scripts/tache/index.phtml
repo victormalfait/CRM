@@ -1,0 +1,76 @@
+<h3>Tâche Client</h3>
+<div id="tache">
+	<?php
+		// On recupere le nombre de tache enregistrer
+		$nbTache = count($this->taches);
+
+		if ($nbTache>0) {
+			// on envoi le nombre de note a jquery
+			foreach ($this->taches as $tache) {
+				?>
+				<!-- tache -->
+					<div class="tache">
+						<div class="fils">
+							<a href="#?supprimeTache" rel="popup_supprimeTache_<?php echo $tache->idTache; ?>" class="poplight" title="Supprimer une tâche">
+								<div class="supprimerTache">Supprimé tâche</div>
+							</a>
+							<div>
+								<?php echo ucfirst($tache->tache); ?>
+								
+							</div>
+							<div>
+								<?php
+									if ($tache->etat == 0) {
+										?>
+											<a href="<?php echo $this->baseUrl('tache/etat/id/' . $tache->idTache); ?>" title="Tache à faire | Cliquez pour changer"><span class="pasFait">(à faire)</span></a>
+										<?php
+									}
+									else{
+										?>
+											<a title="Tâche faite"><span class="fait">(fait)</span></a>
+										<?php
+									}
+
+								?>
+								<span class="dateFin"><?php echo date('d, M Y', $tache->dateFin); ?></span>
+							</div>
+						</div>
+					</div>
+					<!-- tache ends here -->
+
+					<!-- confirmation supprimer la tache -->
+					<div id="popup_supprimeTache_<?php echo $tache->idTache; ?>" class="popup_block overlay-fenetre">
+						<!-- entete -->
+						<header class="overlay-fenetre-titre testr">
+								<span>Suppression d'une Tâche</span>
+						</header>
+						<!-- formulaire -->
+						<section class="overlay-fenetre-section">
+							<div>
+								Êtes-vous sur de vouloir supprimer la tâche :<br />
+								"<?php echo ucfirst($tache->tache); ?>"
+							</div>
+							<div>
+								<ul>
+									<li>
+										<a href="<?php echo $this->baseUrl('tache/supprimer/id/' . $tache->idTache); ?>" title="Valider">
+											<div class="bouton">Valider</div>
+										</a>
+									</li>
+									<li>
+										<a title="Annuler">
+											<div class="bouton close">Annuler</div>
+										</a>
+									</li>
+								</ul>
+						</section>
+					</div>
+					<!-- confirmation supprimer la tache ends here -->
+				<?php
+			}
+		}	
+		else {
+			echo "Aucune Tache";
+		}
+	?>
+</div>

@@ -1,0 +1,67 @@
+/************************************
+*									*
+*	feuille de style de l'overlay	*
+*									*
+************************************/
+
+	.overlay-fenetre{
+		background: #E1E1E1;
+		height: auto;
+		min-width: 300px;
+		border-radius: 3px;
+		box-shadow: 0px 0px 5px 1px #000;
+	}
+
+	.overlay-fenetre-titre{
+		overflow: auto;
+		margin: 4px;
+		padding: 5px;
+		border: 1px dashed #B4B4B4;
+	}
+
+	.overlay-fenetre-titre span{
+		color: #383838;
+		font-size: 1.3em;
+		font-weight: bold;
+	}
+
+	.overlay-fenetre-section{
+		position: relative;
+		padding: 10px;
+		overflow: auto;
+		min-height: 100px;
+		height: auto;
+		background-color: #272822;
+		box-shadow: inset 0px 2px 2px #000000;
+	}
+
+	.overlay-fenetre-section div{ text-align: center; display: inline-block;}
+
+
+/*================ POPUP =================*/
+
+	#fade {
+		display: none;
+		background: #000;
+		position: fixed; left: 0; top: 0;
+		width: 100%; height: 100%;
+		opacity: .7;
+		z-index: 10;
+	}
+
+	.popup_block{
+		display: none; /*--masqué par défaut--*/
+		float: left;
+		position: fixed;
+		top: 50%; left: 50%;
+		z-index: 1002;
+	}
+
+	/*--Gérer la position fixed pour IE6--*/
+	*html #fade {
+		position: absolute;
+	}
+
+	*html .popup_block {
+		position: absolute;
+	}

@@ -1,0 +1,41 @@
+<div class="noteClient">
+	<h3>Notes Client</h3>
+	<?php
+		$nbNote = count($this->notes);
+
+		if ($nbNote>0) {
+			// on envoi le nombre de note a jquery
+			?>
+				<script type="text/javascript">
+					var nbNote = <?php echo $nbNote; ?>;
+				</script>
+				<div id="note">
+					<?php
+					foreach ($this->notes as $note) {
+						?>
+							<div>
+								<?php echo ucfirst($note->note); ?><br />
+								<span>Note ajoutée le <?php echo date('d, M Y', $note->dateAjout); ?></span>
+							</div>
+						<?php
+					}
+					?>
+				</div>
+			<?php
+		}	
+		else {
+			?>
+				<div>Aucune note</div>
+			<?php
+		}
+	?>
+</div>
+<?php
+	if ($nbNote>1) {
+		?>
+			<div class="ancienneNote ancienneNoteShow">
+				ancienne note
+			</div>
+		<?php
+	}
+?>
